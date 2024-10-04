@@ -1,4 +1,4 @@
-package main.java.com.middleware;
+package com.middleware;
 
 
 public class ManagerObserver implements MessageObserver {

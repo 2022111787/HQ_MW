@@ -1,4 +1,4 @@
-package main.java.com.middleware;
+package com.middleware;
 
 public class MessageMiddlewareHQ {
     public static void main(String[] args) {
@@ -21,16 +21,23 @@ public class MessageMiddlewareHQ {
         // 学员订阅报名确认通知
         messageManager.subscribe("报名确认", student);
 
-        // 签到确认通知（
+        // 签到确认通知
         messageManager.subscribe("李忠忠签到确认", fieldman);
         messageManager.subscribe("李月月签到确认", fieldman);
+
+        // 执行人订阅发布培训课程通知
+        messageManager.subscribe("新课程python发布", executor);
 
         // 发布消息
         messageManager.publish("培训申请", new Message("新的培训申请：技术培训"));
         messageManager.publish("课程信息", new Message("新的课程：Java编程"));
+        messageManager.publish("课程信息", new Message("新的课程：python编程"));
         messageManager.publish("报名确认", new Message("学员张三报名成功"));
+
         messageManager.publish("李忠忠签到确认", new Message("李忠忠签到成功"));
         messageManager.publish("李月月签到确认", new Message("李月月签到成功"));
+
+        messageManager.publish("新课程python发布", new Message("新课程python发布成功"));
 
         // 取消订阅
         messageManager.unsubscribe("培训申请", manager);

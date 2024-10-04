@@ -1,4 +1,4 @@
-package main.java.com.middleware;
+package com.middleware;
 
 public interface MessageSubject {
     void attach(MessageObserver observer);  // 添加观察者
